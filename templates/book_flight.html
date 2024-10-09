@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book a Flight</title>
+</head>
+<body>
+<h1>Book a Flight</h1>
+<form method="POST" action="{{ url_for('book_flight', flight_id=flight.id) }}">
+{{ form.hidden_tag() }}
+<label>Flight Information:</label>
+<p>Flight Number: {{ flight.flight_number }}</p>
+<p>Departure City: {{ flight.departure_city }}</p>
+<p>Arrival City: {{ flight.arrival_city }}</p>
+<label for="booking_date">Booking Date:</label>
+{{ form.booking_date(class="form-control") }}
+{{ form.submit(class="btn btn-primary") }}
+</form>
+</body>
+</html>
